@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
 
+  callTodo() {
+    console.log('Agregar');
+    this.todoService.createTodo({title: 'Test', desc: 'First tests', completed: false});
+  }
+
+  async showTodos() {
+    console.log('Mostrar');
+    const todos = await this.todoService.getTodos();
+    console.log(todos);
+  }
 }
