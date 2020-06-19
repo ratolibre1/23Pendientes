@@ -1,13 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="primary">
-      <ion-button (click)="callTodo()">
-        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
     <ion-title>
       Pendientes
     </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="addTodo()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-input placeholder="Título" [(ngModel)]="newTodo.title"></ion-input>
+    <ion-input placeholder="Detalle" [(ngModel)]="newTodo.desc"></ion-input>
   </ion-toolbar>
 </ion-header>
 
@@ -23,8 +27,8 @@
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-        <p class="todoTitle">Asd {{todo.title}}</p>
-        <p class="todoDesc">Qwe {{todo.desc}}</p>
+        <p class="todoTitle">{{todo.title}}</p>
+        <p class="todoDesc">{{todo.desc}}</p>
         </ion-toolbar>
     </ion-item>
   </ion-list>

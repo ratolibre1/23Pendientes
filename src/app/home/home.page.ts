@@ -11,6 +11,8 @@ export class HomePage implements OnInit {
 
   todos = [];
 
+  newTodo: Todo = {title: '', desc: '', completed: false};
+
   constructor(private todoService: TodoService) {
   }
 
@@ -19,19 +21,21 @@ export class HomePage implements OnInit {
   }
 
   async addTodo() {
-    console.log('Agregar');
-    await this.todoService.createTodo({title: 'Test', desc: 'First tests', completed: false});
+    await this.todoService.createTodo(this.newTodo);
+    this.clearNewTodo();
     await this.showTodos();
   }
 
   async showTodos() {
-    console.log('Mostrar');
     this.todos = await this.todoService.getTodos();
-    console.log(this.todos);
   }
 
   async completeTodo(todo: Todo) {
     console.log(`Completar todo ${todo.id}`);
     await this.todoService.completeTodo(todo);
+  }
+
+  clearNewTodo(){
+    this.newTodo = { title: '', desc: '', completed: false };
   }
 }

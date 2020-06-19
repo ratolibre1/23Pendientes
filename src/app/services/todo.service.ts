@@ -9,12 +9,12 @@ export class TodoService {
 
   constructor(private storage: Storage) { }
 
-  generateRandomKey(): string{
-    return (Math.random().toString(36).substr(2));
+  generateDateKey(): string{
+    return new Date().toISOString();
   }
 
   async createTodo(newTodo: Todo){
-    const key = this.generateRandomKey();
+    const key = this.generateDateKey();
     newTodo.id = key;
     return await this.storage.set(key, newTodo);
   }
