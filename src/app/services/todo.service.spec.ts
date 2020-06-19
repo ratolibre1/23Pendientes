@@ -78,7 +78,6 @@ describe('TodoService', () => {
     }
 
     const todos = await service.getTodos();
-    console.log('TEST TODOS SON' + todos);
 
     expect(service.getTodos).toHaveBeenCalledTimes(1);
     // TODO: Fix this expect
