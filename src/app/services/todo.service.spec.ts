@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { TodoService } from './todo.service';
 import { IonicStorageModule } from '@ionic/storage';
@@ -17,18 +17,19 @@ describe('TodoService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should create different random keys', () => {
-    spyOn(service, 'generateRandomKey').and.callThrough();
+  it('should create different random keys', async () => {
+    spyOn(service, 'generateDateKey').and.callThrough();
 
-    const key1 = service.generateRandomKey();
-    const key2 = service.generateRandomKey();
+    const key1 = service.generateDateKey();
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const key2 = service.generateDateKey();
 
-    expect(service.generateRandomKey).toHaveBeenCalledTimes(2);
+    expect(service.generateDateKey).toHaveBeenCalledTimes(2);
     expect(key1).not.toEqual(key2);
   });
 
   it('should store a todo', async () => {
-    spyOn(service, 'generateRandomKey').and.returnValue('testKey');
+    spyOn(service, 'generateDateKey').and.returnValue('testKey');
     spyOn(service, 'createTodo').and.callThrough();
     spyOn(service, 'getTodo').and.callThrough();
 
@@ -38,7 +39,7 @@ describe('TodoService', () => {
 
     const storedTodo = await service.getTodo('testKey');
 
-    expect(service.generateRandomKey).toHaveBeenCalledTimes(1);
+    expect(service.generateDateKey).toHaveBeenCalledTimes(1);
     expect(service.createTodo).toHaveBeenCalledTimes(1);
     expect(service.getTodo).toHaveBeenCalledTimes(1);
     expect(storedTodo.title).toEqual('TestTodo');
@@ -47,7 +48,7 @@ describe('TodoService', () => {
   });
 
   it('should save a todo as completed', async () => {
-    spyOn(service, 'generateRandomKey').and.returnValue('testKey');
+    spyOn(service, 'generateDateKey').and.returnValue('testKey');
     spyOn(service, 'completeTodo').and.callThrough();
     spyOn(service, 'updateTodo').and.callThrough();
     spyOn(service, 'getTodo').and.callThrough();

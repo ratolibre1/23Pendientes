@@ -1,6 +1,21 @@
-# MyEquifax mobile application #
+# "Pendientes" app for 23People, by Arturo Vial #
 
 All notable changes to this project will be documented in this file.
+
+## [0.0.3] - 2020-06-19
+
+### Added
+
+- [GCS23P-3](https://jira.equifax.com/browse/GCS23P-3) Added interface to create a new todo by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-3](https://jira.equifax.com/browse/GCS23P-3) Adding a new todo updates the list by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
+### Changed
+
+- [GCS23P-3](https://jira.equifax.com/browse/GCS23P-3) Replaced the random key function for one using timestamps when saving new Todos by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-3](https://jira.equifax.com/browse/GCS23P-3) Updated some TodoService UTs to reflect this change by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
+### Deleted
+- [GCS23P-3](https://jira.equifax.com/browse/GCS23P-3) Deleted unnecessary logs by [@axv254](https://bitbucket.equifax.com/users/axv254)
 
 ## [0.0.2] - 2020-06-19
 
