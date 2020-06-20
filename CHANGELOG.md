@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2020-06-19
+
+### Added
+
+- [GCS23P-4](https://jira.equifax.com/browse/GCS23P-4) Added functionality to "complete todo" button by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- Ran the app on Android to generate relevant files by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
 ## [0.0.3] - 2020-06-19
 
 ### Added
