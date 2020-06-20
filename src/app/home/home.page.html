@@ -20,7 +20,7 @@
     <ion-item *ngFor="let todo of todos">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button *ngIf="!todo.completed">
+      <ion-button *ngIf="!todo.completed" (click)="completeTodo(todo)">
         <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
       </ion-button>
       <ion-button>
