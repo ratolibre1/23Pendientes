@@ -28,6 +28,10 @@ export class TodoService {
     await this.updateTodo(todo);
   }
 
+  async deleteTodo(todo: Todo){
+    await this.storage.remove(todo.id);
+  }
+
   async getTodo(key: string){
     return await this.storage.get(key);
   }

@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Pendientes
+      23Pendientes
     </ion-title>
   </ion-toolbar>
   <ion-toolbar>
     <ion-buttons slot="primary">
-      <ion-button (click)="addTodo()">
+      <ion-button (click)="addTodo()" [disabled]="newTodo.title.length == 0">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -18,18 +18,18 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let todo of todos">
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-button *ngIf="!todo.completed" (click)="completeTodo(todo)">
-        <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button *ngIf="!todo.completed" (click)="completeTodo(todo)">
+            <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="deleteTodo(todo)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
         <p class="todoTitle">{{todo.title}}</p>
         <p class="todoDesc">{{todo.desc}}</p>
-        </ion-toolbar>
+      </ion-toolbar>
     </ion-item>
   </ion-list>
 </ion-content>
