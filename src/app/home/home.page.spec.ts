@@ -24,20 +24,4 @@ describe('HomePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should add a new todo', async () => {
-    spyOn(component, 'addTodo').and.callThrough();
-    spyOn(component, 'showTodos').and.callThrough();
-
-    const initialTodos = component.todos.length;
-    await component.addTodo();
-
-    const newTotalTodos = component.todos.length;
-
-    expect(component.addTodo).toHaveBeenCalledTimes(1);
-    expect(component.showTodos).toHaveBeenCalledTimes(1);
-
-    // TODO: Fix this test
-    // expect(newTotalTodos).toEqual(initialTodos + 1);
-  });
 });

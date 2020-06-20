@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2020-06-20
+
+### Added
+
+- [GCS23P-5](https://jira.equifax.com/browse/GCS23P-5) Added function to delete Todos on the service by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-5](https://jira.equifax.com/browse/GCS23P-5) Implemented usage of said function, now todos can be deleted by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-6](https://jira.equifax.com/browse/GCS23P-6) Added a condition for enabling the addTodo button so the title is required by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
 ## [0.0.4] - 2020-06-19
 
 ### Added

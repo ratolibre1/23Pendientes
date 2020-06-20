@@ -31,8 +31,12 @@ export class HomePage implements OnInit {
   }
 
   async completeTodo(todo: Todo) {
-    console.log(`Completar todo ${todo.id}`);
     await this.todoService.completeTodo(todo);
+  }
+
+  async deleteTodo(todo: Todo){
+    await this.todoService.deleteTodo(todo);
+    await this.showTodos();
   }
 
   clearNewTodo(){
