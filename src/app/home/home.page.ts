@@ -8,12 +8,29 @@ import { Todo } from '../interfaces/todo';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
   todos = [];
 
-  newTodo: Todo = {title: '', desc: '', completed: false};
+  newTodo: Todo = { title: '', desc: '', completed: false };
 
-  constructor(private todoService: TodoService) {
+  constructor(private todoService: TodoService) {}
+
+  getPendingTodos() {
+    const pendingTodos = [];
+    this.todos.forEach((todo) => {
+      if (!todo.completed) {
+        pendingTodos.push(todo);
+      }
+    });
+    return pendingTodos;
+  }
+  getCompletedTodos() {
+    const completedTodos = [];
+    this.todos.forEach((todo) => {
+      if (todo.completed) {
+        completedTodos.push(todo);
+      }
+    });
+    return completedTodos;
   }
 
   async ngOnInit() {
@@ -34,12 +51,12 @@ export class HomePage implements OnInit {
     await this.todoService.completeTodo(todo);
   }
 
-  async deleteTodo(todo: Todo){
+  async deleteTodo(todo: Todo) {
     await this.todoService.deleteTodo(todo);
     await this.showTodos();
   }
 
-  clearNewTodo(){
+  clearNewTodo() {
     this.newTodo = { title: '', desc: '', completed: false };
   }
 }
