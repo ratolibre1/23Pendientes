@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import { Todo } from '../interfaces/todo';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomePage implements OnInit {
 
   newTodo: Todo = { title: '', desc: '', completed: false };
 
-  constructor(private todoService: TodoService) {}
+  constructor(private alertController: AlertController, private todoService: TodoService) {}
 
   getPendingTodos() {
     const pendingTodos = [];
@@ -49,6 +50,26 @@ export class HomePage implements OnInit {
 
   async completeTodo(todo: Todo) {
     await this.todoService.completeTodo(todo);
+  }
+
+  async presentDeleteConfirm(todo: Todo) {
+    const alert = await this.alertController.create({
+      cssClass: 'alertCss',
+      header: 'Confirmar borrado',
+      message: `Confirmas que quieres borrar la tarea "${todo.title}"?`,
+      buttons: [
+        {
+          cssClass: 'dangerButton',
+          text: 'Borrar',
+          handler: () => {
+            this.deleteTodo(todo);
+          },
+        },
+        'Cancelar',
+      ],
+    });
+
+    await alert.present();
   }
 
   async deleteTodo(todo: Todo) {
