@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2020-06-20
+
+### Added
+
+- [GCS23P-7](https://jira.equifax.com/browse/GCS23P-7) Added functions to sort existing todos into pending and completed by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
+### Changed
+
+- [GCS23P-7](https://jira.equifax.com/browse/GCS23P-7) Updated CSS to make buttons clearer and more appealing by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-7](https://jira.equifax.com/browse/GCS23P-7) Updated CSS to better distinguish when a task is complete (faded text color) by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
 ## [0.0.5] - 2020-06-20
 
 ### Added

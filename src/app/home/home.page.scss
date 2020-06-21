@@ -1,3 +1,11 @@
 p.todoTitle {
   font-weight: 700;
 }
+
+p.todoDesc {
+  font-size: small;
+}
+
+ion-toolbar.completedTodos {
+  color: #999;
+}
