@@ -23,7 +23,7 @@
           <ion-button (click)="completeTodo(todo)">
             <ion-icon slot="icon-only" name="checkmark-circle" color="success"></ion-icon>
           </ion-button>
-          <ion-button (click)="deleteTodo(todo)">
+          <ion-button (click)="presentDeleteConfirm(todo)">
             <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -36,7 +36,7 @@
     <ion-item *ngFor="let todo of getCompletedTodos()">
       <ion-toolbar class="completedTodos">
         <ion-buttons slot="end">
-          <ion-button (click)="deleteTodo(todo)">
+          <ion-button (click)="presentDeleteConfirm(todo)">
             <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
           </ion-button>
         </ion-buttons>

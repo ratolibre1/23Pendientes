@@ -1,6 +1,13 @@
-# "Pendientes" app for 23People, by Arturo Vial #
+# "23Pendientes" app for 23People, by Arturo Vial #
 
 All notable changes to this project will be documented in this file.
+
+## [0.0.7] - 2020-06-20
+
+### Added
+
+- [GCS23P-8](https://jira.equifax.com/browse/GCS23P-8) Added model popup to confirm deletion of a task by [@axv254](https://bitbucket.equifax.com/users/axv254)
+- [GCS23P-8](https://jira.equifax.com/browse/GCS23P-8) Added CSS styling to further differentiate possible actions by [@axv254](https://bitbucket.equifax.com/users/axv254)
 
 ## [0.0.6] - 2020-06-20
 
