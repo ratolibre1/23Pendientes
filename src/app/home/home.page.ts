@@ -13,7 +13,7 @@ export class HomePage implements OnInit {
 
   newTodo: Todo = { title: '', desc: '', completed: false };
 
-  constructor(private alertController: AlertController, private todoService: TodoService) {}
+  constructor(private alertController: AlertController, public todoService: TodoService) {}
 
   getPendingTodos() {
     const pendingTodos = [];
