@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.8] - 2020-07-21
+
+### Added
+
+- [GCS23P-9](https://jira.equifax.com/browse/GCS23P-9) Added Unit Tests to Home Page to account for some of its functions by [@axv254](https://bitbucket.equifax.com/users/axv254)
+
 ## [0.0.7] - 2020-06-20
 
 ### Added
